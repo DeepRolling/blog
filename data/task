@@ -1,0 +1,6 @@
+search node blocking thread and non-blocking thread
+git patch
+hermes engine with Error:Maximum call stack exceed
+https://stackoverflow.com/questions/64257244/increase-call-stack-size-react-native-with-jsc-hermes-v8
+https://github.com/facebook/hermes/blob/dee3b5324b55cbdcf6d72589a8649e297c32874d/public/hermes/Public/RuntimeConfig.h#L50-L51
+https://github.com/storybookjs/react-native/issues/152
