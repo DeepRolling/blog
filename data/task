@@ -1,6 +1,50 @@
 search node blocking thread and non-blocking thread
+
 git patch
+
 hermes engine with Error:Maximum call stack exceed
 https://stackoverflow.com/questions/64257244/increase-call-stack-size-react-native-with-jsc-hermes-v8
 https://github.com/facebook/hermes/blob/dee3b5324b55cbdcf6d72589a8649e297c32874d/public/hermes/Public/RuntimeConfig.h#L50-L51
 https://github.com/storybookjs/react-native/issues/152
+
+
+how to determine which dependencies trigger useEffect execute
+https://github.com/simbathesailor/use-what-changed
+
+
+write a post for reduce android package size:
+https://zhuanlan.zhihu.com/p/26833002
+https://segmentfault.com/a/1190000023517574
+https://www.disidu.com/post/1806.html
+
+
+css evolution :
+https://pustelto.com/blog/css-vs-css-in-js-perf/
+https://medium.com/@perezpriego7/css-evolution-from-css-sass-bem-css-modules-to-styled-components-d4c1da3a659b
+
+
+
+react-native chore
+there have two way download js bundle from metro server:
+
+use adb reverse tcp:8081 tcp:8081 forward local tcp port to computer tcp port ,
+so use usb-line you can download js-bundle from computer extremely fast
+defect : you must have use-line and adb env setup
+advantage : fast download and not not need let your phone and computer on same LAN
+
+
+set debug server host to 192.168.x.xxx:8081 in your application
+so you can download js-bundle from remote computer without use-line connect
+defect : js-bundle can be download slowly when WIFI connect is slow
+advantage : you can download js-bundle from any computer in same LAN
+
+
+react-native Animation.loop have small pause between each animation cycle:
+solution:https://stackoverflow.com/questions/56155555/react-native-animation-has-a-small-pause
+
+ssh port forward:
+ref:https://www.cnblogs.com/sparkdev/p/7497388.html
+use following line for forward local port to remote port
+ssh -L 3030:localhost:3030 baixuanyu@web.finsiot.com -p 9999
+notice : you need create account in remote server(not website account,it's ssh(linux server) account)
+
