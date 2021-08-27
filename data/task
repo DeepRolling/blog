@@ -29,3 +29,6 @@ use following line for forward local port to remote port
 ssh -L 3030:localhost:3030 baixuanyu@web.finsiot.com -p 9999
 notice : you need create account in remote server(not website account,it's ssh(linux server) account)
 
+
+抽库的时候记得把全局的@utils前缀翻译去掉，要不会导致找不到
+
