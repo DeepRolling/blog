@@ -1,6 +1,9 @@
-# Binary-to-text encoding
-
-## description
+{{{
+    "title"    : "Binary to Text encoding",
+    "tags"     : ["binary"],
+    "category" : "underlayer",
+    "date"     : "05-14-2021"
+}}}
 
 详细的来说，这类编码方法是将二进制数据转换为可打印字符的序列。当通道不支持二进制数据的时候（如email和NNTP)这种编码是很必要的。
 这类算法可以将二进制数据映射成文本类型。（一般是[ASCII](https://en.wikipedia.org/wiki/ASCII)的形式)

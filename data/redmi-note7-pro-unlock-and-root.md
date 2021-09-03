@@ -1,4 +1,11 @@
-# 记一次Redmi note7 pro unlock(bootloader) and root
+{{{
+    "title"    : "Unlock(bootloader) and root my Redmi Note7 Pro",
+    "tags"     : [ "root", "android" ],
+    "category" : "mobile develop",
+    "date"     : "06-10-2021"
+}}}
+
+record an experience about root my android smart phone
 
 ## fastboot 和 bootloader
 

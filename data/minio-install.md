@@ -1,4 +1,11 @@
-# minIO安装
+{{{
+    "title"    : "How to install minIO service",
+    "tags"     : [ "minIO", "docker" ],
+    "category" : "install",
+    "date"     : "5-13-2021"
+}}}
+
+MinIo is an opensource oss framework similar to QINIU Cloud.
 
 ## 安装原因
 

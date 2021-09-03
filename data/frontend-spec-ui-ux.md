@@ -1,4 +1,11 @@
-# 前端代码规范-UI/UX
+{{{
+    "title"    : "Frontend UI/UX usage guide",
+    "tags"     : ["frontend","ui/ux"],
+    "category" : "frontend develop",
+    "date"     : "05-19-2021"
+}}}
+
+This article describe some UI/UX usage principle in frontend dev .
 
 ## 图片格式选择（位图）
 

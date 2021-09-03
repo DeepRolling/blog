@@ -1,7 +1,12 @@
-# Android 与 IOS 关于wifi信息获取的适配
+{{{
+    "title"    : "Android 与 IOS 关于wifi信息获取的适配",
+    "tags"     : ["android", "ios","wifi"],
+    "category" : "mobile develop",
+    "date"     : "06-29-2021"
+}}}
 
-在app开发过程中，有时候我们可能需要去对当前智能手机的网络信息，比如当前是否处于Wi-Fi连接状态，连接的Wi-Fi的名字（SSID）又是什么，连接的频率是2.4Hz或者是5.0Hz的。而且这些信息在Android各个版本之间的获取方式以及所需权限也都是不一样的。
-
+在app开发过程中，有时候我们可能需要去对当前智能手机的网络信息，比如当前是否处于Wi-Fi连接状态，连接的Wi-Fi的名字（SSID）又是什么，连接的频率是2.4Hz或者是5.0Hz的。
+而且这些信息在Android各个版本之间的获取方式以及所需权限也都是不一样的。
 
 ## Android中wifi信息的获取
 
@@ -20,7 +25,7 @@ try {
 		  }  
     }  
     promise.resolve(ssid);  
-} catch (Exception e) {  
+} catch (Exception e)
     promise.resolve(null);  
 }
 ```
@@ -80,14 +85,12 @@ if (Build.VERSION.SDK_INT > 30) {
 
 ## IOS中wifi信息的获取
 
-
 首先我们需要购买 apple 开发这账号，在 ion/FinsiotApp/FinsiotApp.entitlements，FinsiotAppRelease.entitlements 文件中添加
 
 ```  
 <dict>  
  <key>com.apple.developer.networking.wifi-info</key> <true/></dict>  
 ```
-
 
 #### IOS获取Wi-Fi频率
 在IOS中wifi频率以及wifi信息的获取是分开的。

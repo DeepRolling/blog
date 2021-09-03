@@ -1,4 +1,11 @@
-# 前端代码规范-代码格式化与检测
+{{{
+    "title"    : "Frontend code quality ensure",
+    "tags"     : ["frontend","ts"],
+    "category" : "frontend develop",
+    "date"     : "05-24-2021"
+}}}
+
+How to ensure quality of frontend codebase ? 
 
 ## javascript生态以及替代
 

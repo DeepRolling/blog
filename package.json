@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/app.ts"
+    "start": "ts-node app.ts",
+    "compile": "tsc",
+    "dist": "node dist/app.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,8 @@
   "homepage": "https://gitlab.com/deepcodestudio/blog#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "node-watch": "^0.7.1",
+    "poet": "^3.0.0",
     "prisma": "^2.26.0"
   },
   "devDependencies": {

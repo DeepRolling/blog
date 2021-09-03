@@ -3,7 +3,9 @@
   "compilerOptions": {
     "preserveConstEnums": true,
     "outDir": "dist",
-    "sourceMap": true
+    "sourceMap": true,
+    "allowUnreachableCode": false,
+    "allowSyntheticDefaultImports":true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]

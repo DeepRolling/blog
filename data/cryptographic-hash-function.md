@@ -1,4 +1,11 @@
-# cryptographic hash function
+{{{
+    "title"    : "Cryptographic hash function",
+    "tags"     : ["hash","cypher"],
+    "category" : "underlayer",
+    "date"     : "05-13-2021"
+}}}
+
+We will discuss some funny things about hash algorithm.
 
 ## 关于hash算法
 
