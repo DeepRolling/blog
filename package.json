@@ -27,7 +27,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "node-watch": "^0.7.1",
-    "poet": "^3.0.0",
+    "poet": "DeepRolling/poet.git#poet-v3.0.0-gitpkg",
     "prisma": "^2.26.0"
   },
   "devDependencies": {
