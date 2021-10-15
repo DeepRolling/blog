@@ -59,7 +59,7 @@ png支持存储附加文本信息，以保留图像名称、作者、[著作权]
 png常用的有三种格式 ： PNG-8、24、32
 其中 PNG-8与PNG-32是支持透明度的，所以也是用的最多的两个
 
-在开发过程中如果png颜色比较单调且没有半透明效果应该采用PNG-8格式以减小体积，如有半透明效果且色彩丰富应采用PNG-32。
+在开发过程中如果png颜色比较单调且没有半透明效果应该采用PNG-8格式以减小体积，如果色彩丰富应采用PNG-32。
 
 可参考的一些文档:
 >[Color-Depth](https://en.wikipedia.org/wiki/Color_depth#48-bit)
@@ -67,10 +67,7 @@ png常用的有三种格式 ： PNG-8、24、32
 [React-native实现渐进式加载](https://github.com/HandlebarLabs/react-native-examples-and-tutorials/tree/master/tutorials/progressive-image-loading)
 [React-native实现渐进式加载翻译](https://blog.csdn.net/villa_mou/article/details/106140446)
 [macos下获取PNG图片格式](https://stackoverflow.com/a/39529262)
-
-todo 用tinypng做一个图片压缩工具在上线前针对每一个图片进行压缩（带透明度的也可以压缩）
-其实tinypng算是肉眼可见的有损压缩，因为原理是合并多个单独的色块达到压缩的目的
-在做的时候可以考虑在image文件夹中分为半透明和全透明和不透明三种目录，半透明的不能压缩，会丢失信息
+[8-bit colormap是否带透明度](https://stackoverflow.com/a/1973761/11742589)
 
 
 #### JPEG
