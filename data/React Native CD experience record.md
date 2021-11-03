@@ -1,5 +1,5 @@
 {{{
-    "title"    : "React Native CD experience record.md",
+    "title"    : "React Native CD experience record",
     "tags"     : ["react-native","CI/CD"],
     "category" : "mobile develop",
     "date"     : "09-09-2021"
