@@ -5,12 +5,13 @@
     "date"     : "11-02-2021"
 }}}
 
+
 Notification is a importent part of mobile application development .As you see , most  application have serveral functionality to interact with user .
 
 For example , the Alarm application can notificate user it's time to do something. And the food-express application can remind user to get them food back , and if there are some problem open when delivery-man delivery the fresh food to you.
 
 On acount of **serveral custom ROM base on AOSP(Android Open Source Project)** in China , send notification to phone become **more complicated** when user kill the running application.
->By the way , the behavior of built-in some application user not wantted in smart-phone is really sicky!Fuck the manufacturers!
+>By the way , the behavior of built some application user not wantted in smart-phone is really sicky ! Fuck the manufacturers!
 
 We know that the offline notification is importent for us , Imagine you would not receive the book success notification after you kill the airport ticket book application . It's definitely terrible. So for achieve this capbility ,we need integrate the library published by manufactuters to our project.
 
@@ -22,12 +23,12 @@ To push notification to our device when our application is alive , the only thin
     yarn add jpush-react-native
     yarn add jcore-react-native
 
-For some compilement problem , you also need **do some tedious work** for link the android library even the auto-linking(introducing in react-native0.60) already widely used . For the detail , please see  [README.md](https://github.com/jpush/jpush-react-native) .
+For some compilement problem , you also need **do some tedious work** for config Jpush account even the auto-linking(introducing in react-native0.60) already widely used .
 
-After that , for make this library work properly , you need config some code in **entry file** in different platform :
+After that , for make this library work properly , you need write some code in **entry file** in different platform :
 >**MainApplication.java** and **app/build.gradle** for Android
 >**AppDelegate.m** for IOS
->For the detail , also see README.md metioned above .
+>For the detail , also see [README.md](https://github.com/jpush/jpush-react-native)  metioned above .
 
 After these work , we can use this library in our react-native code :
 
@@ -42,11 +43,13 @@ By now , you can send some in-application notification by use dashboard of Jpush
 
 We are done here , the basic functionality of this library already integrated , congratulation!!!
 
-# System-level notification server(offline push notification)
+# System-level notification (offline push notification)
 
 But don't count your chickens before they hatched . The in-application notification just a piece of shit . The important functionality is offline-notification ,  it also very important for our user , isn't it ?
 
-So let's dive into development of wrapper library that used to offer offline-notification ability to us :
+I will talk some thought of how to build a wrapper library to offer offline-notification ability to us :
+
+> notice : these step is only for **Android platform** , for **Ios system** , you need config the offical **APS(Apple push service) with Jpush** to get things work .
 
 I wanna create a library that ship with all third-part notification library , so that I can integrate all platforms by install this package and fill the keys applyed in the ROM offical website .
 ```
@@ -179,7 +182,4 @@ When we add this package to our project , android will compile this library by r
 
 **The last step is we need create serveral application in Manufactuter's developer offical website , copy the key and secrets of these application we just created to jpush dashboard.**
 
-For the more detail information and configration , such as how to apply for serveral notification server key and do some extra configration in your project make them work ,  see README in my published [ wrapper project](https://github.com/DeepRolling/react-native-jpush-rom-wrapper) .
-
-
-***todo you also need config ios push***
+For the more detail information and configration , such as how to apply secret keys of serveral notification server and do some extra configration to get whole notification functionality work ,  see README in my published [ wrapper project](https://github.com/DeepRolling/react-native-jpush-rom-wrapper) .
