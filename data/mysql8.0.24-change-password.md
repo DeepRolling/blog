@@ -9,13 +9,13 @@ I am so stupid that I often forget my mysql password ...
 
 First at all , I googling for a solution ,and i found some clue from this [post](https://www.tecmint.com/reset-root-password-in-mysql-8/) :
 
-```shell
-# systemctl stop mysqld.service     # for distros using systemd 
-# mysqld --skip-grant-tables --user=mysql &
-# mysql  # Then, you can connect to the mysql server by simply running.
-# FLUSH PRIVILEGES;
-# ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_passowrd';
-# systemctl stop mysqld.service        # for distros using systemd 
+```bash
+systemctl stop mysqld.service     # for distros using systemd
+mysqld --skip-grant-tables --user=mysql &
+mysql  # Then, you can connect to the mysql server by simply running.
+FLUSH PRIVILEGES;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_passowrd';
+systemctl stop mysqld.service        # for distros using systemd
 ```
 
 After that , i try to restart mysqld with systemctl command and i run into a error :

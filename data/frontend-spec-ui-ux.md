@@ -1,6 +1,6 @@
 {{{
     "title"    : "Frontend UI/UX usage guide",
-    "tags"     : ["frontend","ui/ux"],
+    "tags"     : ["frontend","ui-ux"],
     "category" : "frontend develop",
     "date"     : "05-19-2021"
 }}}

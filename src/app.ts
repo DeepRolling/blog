@@ -3,7 +3,9 @@ const Poet = require('poet')
 const app =  express()
 const port = 2000
 import watch from 'node-watch'
-
+//@ts-ignore
+import { marked } from 'marked';
+import hljs from "highlight.js";
 
 const pathConfig = {
   postDir:__dirname + '/../data',
@@ -20,6 +22,24 @@ const poet = new Poet(app, {
         '/mytags/:tag': 'tag',
         '/mycategories/:category': 'category'
     }
+});
+poet.templateEngines.marked.setOptions({
+    renderer: new marked.Renderer(),
+    highlight: function(code: any, lang: any) {
+        const hljs = require('highlight.js');
+        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+        const formatResult = hljs.highlight(code, { language })
+        console.log('current block use lang  : '+formatResult.value)
+        return formatResult.value;
+    },
+    langPrefix: 'hljs language-', // highlight.js css expects a top-level 'hljs' class.
+    pedantic: false,
+    gfm: true,
+    breaks: false,
+    sanitize: false,
+    smartLists: true,
+    smartypants: false,
+    xhtml: false
 });
 
 

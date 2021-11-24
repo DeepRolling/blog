@@ -5,7 +5,7 @@
     "date"     : "05-24-2021"
 }}}
 
-How to ensure quality of frontend codebase ? 
+作为一个开发者，我经常考虑一个事情，怎么能在前端开发中保证代码的质量，今天我分享一下我个人的拙见 : 
 
 ## javascript生态以及替代
 
