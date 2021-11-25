@@ -8,6 +8,8 @@ const Poet = require('poet');
 const app = express_1.default();
 const port = 2000;
 const node_watch_1 = __importDefault(require("node-watch"));
+//@ts-ignore
+const marked_1 = require("marked");
 const pathConfig = {
     postDir: __dirname + '/../data',
     viewDir: __dirname + '/../views',
@@ -23,6 +25,24 @@ const poet = new Poet(app, {
         '/mytags/:tag': 'tag',
         '/mycategories/:category': 'category'
     }
+});
+poet.templateEngines.marked.setOptions({
+    renderer: new marked_1.marked.Renderer(),
+    highlight: function (code, lang) {
+        const hljs = require('highlight.js');
+        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+        const formatResult = hljs.highlight(code, { language });
+        // console.log('current block use lang  : '+formatResult.value)
+        return formatResult.value;
+    },
+    langPrefix: 'hljs language-',
+    pedantic: false,
+    gfm: true,
+    breaks: false,
+    sanitize: false,
+    smartLists: true,
+    smartypants: false,
+    xhtml: false
 });
 const whenPostChange = () => {
     console.log('detected post change , clear poet instance and regenerate it');
