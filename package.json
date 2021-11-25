@@ -30,10 +30,8 @@
     "marked": "4.0.4",
     "node-watch": "0.7.1",
     "poet": "DeepRolling/poet.git#poet-v3.0.0-gitpkg",
-    "prisma": "2.26.0"
   },
   "devDependencies": {
-    "@prisma/client": "2.26.0",
     "@tsconfig/node16": "1.0.1",
     "@types/express": "4.17.12",
     "@types/node": "15.14.0",
