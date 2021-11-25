@@ -19,12 +19,12 @@ systemctl stop mysqld.service        # for distros using systemd
 ```
 
 After that , i try to restart mysqld with systemctl command and i run into a error :
-```shell
+```bash
 [root@VM-0-4-centos /]# systemctl restart mysqld.service
 Job for mysqld.service failed because the control process exited with error code. See "systemctl status mysqld.service" and "journalctl -xe" for details.
 ```
 So I try to look detail of this error : 
-```shell
+```bash
 [root@VM-0-4-centos /]# systemctl status mysqld.service
 ● mysqld.service - MySQL Server
    Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)
@@ -43,7 +43,7 @@ Sep 03 15:16:45 VM-0-4-centos systemd[1]: Unit mysqld.service entered failed sta
 Sep 03 15:16:45 VM-0-4-centos systemd[1]: mysqld.service failed.
 ```
 But this not clear enough to kill this problem , so i look for mysqld log file :
-```shell
+```bash
 [root@VM-0-4-centos /]# cat var/log/mysqld.log 
 2021-05-07T10:25:54.748778Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.24) initializing of server in progress as process 3569
 2021-05-07T10:25:54.762166Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
@@ -102,7 +102,7 @@ But this not clear enough to kill this problem , so i look for mysqld log file :
 ```
 
 Seem to a InnoDB problem ,finally find solution from [here](https://stackoverflow.com/a/35978229/11742589) : 
-```shell
+```bash
 [root@VM-0-4-centos /]# ps aux | grep mysql
 root      5710  0.0  0.0 112808   964 pts/0    R+   15:55   0:00 grep --color=auto mysql
 mysql    31156  0.1 17.5 1315760 330608 pts/0  Sl   15:09   0:03 mysqld --skip-grant-tables --user=mysql

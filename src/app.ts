@@ -29,7 +29,7 @@ poet.templateEngines.marked.setOptions({
         const hljs = require('highlight.js');
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
         const formatResult = hljs.highlight(code, { language })
-        console.log('current block use lang  : '+formatResult.value)
+        // console.log('current block use lang  : '+formatResult.value)
         return formatResult.value;
     },
     langPrefix: 'hljs language-', // highlight.js css expects a top-level 'hljs' class.

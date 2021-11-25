@@ -11,7 +11,7 @@
 ## Android中wifi信息的获取
 
 在Android8.0到Android11我们都可以使用WifiManager进行wifi信息的获取
-```
+```java
 WifiManager wifi;
 wifi = (WifiManager) reactContext.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 try {  
@@ -37,7 +37,7 @@ try {
 **这其中需要动态申请的只有FINE_LOCATION(已包含COARSE_LOCATION).**
 
 值得注意的一点是在Android9.0及以上版本需要确保手机的**Location service处于开启状态**，所以我们在获取前需要进行判断:
-```
+```TypeScript
 //ensure Location services are enabled on the device  
 let enabled = DeviceInfo.isLocationEnabledSync();  
 if (enabled) {  
@@ -47,9 +47,11 @@ if (enabled) {
     showToast('请打开位置服务后重试');  
 }
 ```
+
 这就能适配到2021年的大部分设备，对于极少数安装了Android S（Android 12)的用户，就不能使用WifiManager获取了：
 从[官方api](https://developer.android.com/reference/android/net/wifi/WifiManager#getConnectionInfo%28%29)可以看出getConnectionInfo在Android S已经废弃，所以我们要对其进行适配:
-```java
+
+```TypeScript
 if (Build.VERSION.SDK_INT > 30) {
 	    // On Android S+, need to use NetworkCapabilities to get the WifiInfo.  
 	  Network[] allNetworks = connectivityManager.getAllNetworks();  
@@ -87,7 +89,7 @@ if (Build.VERSION.SDK_INT > 30) {
 
 首先我们需要购买 apple 开发这账号，在 ion/FinsiotApp/FinsiotApp.entitlements，FinsiotAppRelease.entitlements 文件中添加
 
-```  
+```xml  
 <dict>  
  <key>com.apple.developer.networking.wifi-info</key> <true/></dict>  
 ```

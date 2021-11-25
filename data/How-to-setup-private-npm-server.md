@@ -27,11 +27,17 @@ This post describe the steps of set up a private npm server and some matters nee
 ## 搭建步骤
 
 这里为了不污染服务器环境，选取了docker进行verdaccio的部署。
-`docker pull verdaccio/verdaccio`拉取docker镜像
-`docker run -it --name verdaccio -p 4873:4873 verdaccio/verdaccio`启动docker容器
+拉取docker镜像并启动docker容器 : 
+```bash
+docker pull verdaccio/verdaccio
+docker run -it --name verdaccio -p 4873:4873 verdaccio/verdaccio
+```
+
 
 >这里踩了一个坑，一开始运行的是官网的docker运行命令：
->docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio，
+> ```bash
+>docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+> ```
 >比正确的命令多了一个 --rm 参数
 >然后导致服务器重启的时候以前传到私服上的npm包全部被清除掉了
 >后来经过查询文档得知 --rm参数会在容器退出的时候自动清理容器内部的文件系统（在verdaccio中用于存放为们上传的包）
@@ -49,21 +55,26 @@ This post describe the steps of set up a private npm server and some matters nee
 我们需要在verdaccio的docker容器中手动删除,步骤如下:
 
 > 1 . 使用docker inspect指令去查看verdaccio docker容器创建的虚拟卷
-> `docker inspect -f '{{ json .Mounts }}' verdaccio`
-> [{"Type":"volume","Name":"fc519bb149c666e49d15eaf625dac09ad6c1fcd57953a19565146bf31679bad0","Source":"/var/lib/docker/volumes/fc519bb149c666e49d15eaf625dac09ad6c1fcd57953a19565146bf31679bad0/_data","Destination":"/verdaccio/storage","Driver":"local","Mode":"","RW":true,"Propagation":""}]
+> ```bash
+> docker inspect -f '{{ json .Mounts }}' verdaccio
+> ```
+> 返回的结果如下:
+> ```json
+>[{"Type":"volume","Name":"fc519bb149c666e49d15eaf625dac09ad6c1fcd57953a19565146bf31679bad0","Source":"/var/lib/docker/volumes/fc519bb149c666e49d15eaf625dac09ad6c1fcd57953a19565146bf31679bad0/_data","Destination":"/verdaccio/storage","Driver":"local","Mode":"","RW":true,"Propagation":""}]
+> ```
 > 我们可以知道verdaccio只创建了一个虚拟卷，路径为 : /verdaccio/storage
 > 2 . 知道存储路径以后使用docker exec -it verdaccio sh 创建和verdaccio容器的交互式shell
-> > ```shell
-> >~ $ cd /verdaccio/storage/
-> >/verdaccio/storage $ ls
-> >data      htpasswd
-> >/verdaccio/storage $ cd data/
-> >/verdaccio/storage/data $ ls
-> >@antv                                         create-ecdh                                   https-browserify                              move-concurrently                             > >rimraf
-> >@babel                                        create-error-class                            https-proxy-agent                             mqtt-match                                    > >ripemd160
-> >@bcoe                                         create-hash                                   human-signals                                 mqtt-pattern                                  > >rnpm
-> >@cnakazawa                                    create-hmac                                   husky                                         mqtt-wildcard                                 > >rnpm-plugin-install
-> >@commitlint                                   create-react-class                            iconv-lite                                    ms                                            > >rnpm-plugin-link
-> >@egjs                                         create-react-native-library                   ieee754                                       ms-rest                                       > >rsvp
-> > ```
+>  ```bash
+> ~ $ cd /verdaccio/storage/
+> /verdaccio/storage $ ls
+> data      htpasswd
+> /verdaccio/storage $ cd data/
+> /verdaccio/storage/data $ ls
+> @antv                                         create-ecdh                                   https-browserify                              move-concurrently                             > >rimraf
+> @babel                                        create-error-class                            https-proxy-agent                             mqtt-match                                    > >ripemd160
+> @bcoe                                         create-hash                                   human-signals                                 mqtt-pattern                                  > >rnpm
+> @cnakazawa                                    create-hmac                                   husky                                         mqtt-wildcard                                 > >rnpm-plugin-install
+> @commitlint                                   create-react-class                            iconv-lite                                    ms                                            > >rnpm-plugin-link
+> @egjs                                         create-react-native-library                   ieee754                                       ms-rest                                       > >rsvp
+>  ```
 > 3 . rm -rf ${specified_package}删除包

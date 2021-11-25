@@ -20,19 +20,23 @@ We know that the offline notification is importent for us , Imagine you would no
 For cost and fast-development reasons , I decide use third-part notification push facilitator : [JPush](https://www.jiguang.cn/).
 To push notification to our device when our application is alive , the only thing we need to do is install the jpush package to our project :
 
-    yarn add jpush-react-native
-    yarn add jcore-react-native
+```bash
+yarn add jpush-react-native
+yarn add jcore-react-native
+```
 
 For some compilement problem , you also need **do some tedious work** for config Jpush account even the auto-linking(introducing in react-native0.60) already widely used .
 
-After that , for make this library work properly , you need write some code in **entry file** in different platform :
+After that , to make the library work properly , you need write some code in **entry file** in different platform :
 >**MainApplication.java** and **app/build.gradle** for Android
+> 
 >**AppDelegate.m** for IOS
+> 
 >For the detail , also see [README.md](https://github.com/jpush/jpush-react-native)  metioned above .
 
 After these work , we can use this library in our react-native code :
 
-```
+```typescript
 import JPush from 'jpush-react-native';
 JPush.getRegistrationID(res => {  
    //use res.registerID for logic code 
@@ -52,14 +56,14 @@ I will talk some thought of how to build a wrapper library to offer offline-noti
 > notice : these step is only for **Android platform** , for **Ios system** , you need config the offical **APS(Apple push service) with Jpush** to get things work .
 
 I wanna create a library that ship with all third-part notification library , so that I can integrate all platforms by install this package and fill the keys applyed in the ROM offical website .
-```
+```bash
 npx create-react-native-library react-native-jpush-rom-wrapper
 ```
 > The reason why I put the word "wrapper" to name of this library is that this library represent a thought of composition .
 > Librarys should become individual ,
 
 After this instruction , the library dir look like below :
-```
+```plain text
 .  
 ├── CONTRIBUTING.md  
 ├── LICENSE  
@@ -102,7 +106,7 @@ We can see the file under the android folder is un-compiled gradle project , if 
 Then we can modify build.gradle file  to add some library dependices , after add these lines , build.gralde looks like below :
 > For HUAWEI library you also need import a specified Gradle build plugin in this file.
 
-```
+```groovy
 buildscript {  
        repositories {  
            google()  

@@ -53,7 +53,7 @@ Redmi note7 pro需要如下步骤 :
 Patching Images的原理就是使用Magisk manager application将一个补丁安装到boot.img或者recovery.img上，然后重启手机的时候自然加载，这样来说对系统是没有更改的，是官方推荐的方式。
 如果手机带boot ramdisk的话就patch 到boot.img上，如果不带的话就patch到recovery.img上
 然后通过fastboot命令去刷入对应的分区:
-```
+```bash
 fastboot flash boot /path/to/magisk_patched.img
 fastboot flash recovery /path/to/magisk_patched.img
 ```
@@ -87,7 +87,7 @@ fastboot flash recovery /path/to/magisk_patched.img
 **要允许修改system分区（不允许修改的话可能会出现/metadata mount的情况)**
 > 我也是安了两次才成功的，第一次好像没有允许修改system分区，安装Magisk直接失败了，报的就是/metadata mount fail，然后在设置里面恢复默认设置，取消勾选*不允许修改system分区*，然后再安就成功了.
 
-## after install Magisk
+## After install Magisk
 
 do some funny ~
 

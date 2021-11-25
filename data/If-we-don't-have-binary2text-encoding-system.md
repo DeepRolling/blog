@@ -84,21 +84,26 @@ UTF-8 is a **8-bit variable-width** encoding system , and **backward-compatible 
 
 You can think of UTF-8 just a **mapping between Unicode Code Point to binary data** , can encoding Code Point to **one -- four bytes .**
 > We can find some example :
+> ```Markdown
 > In Unicode , Code Point U+0035 means glyph '5' , UTF-8 represent this codepoint as binary data : 00110101
 > In Unicode , Code Point U+00C7 means glyph 'Ç' , UTF-8 represent this codepoint as binary data : 11000011 10000111
+>```
 > But in reality world , **a "character" can actually take more than 4 bytes**, e.g. an  [emoji flag character](https://en.wikipedia.org/wiki/Regional_indicator_symbol)  takes 8 bytes since it's "constructed from a pair of Unicode scalar values".
-> ```js
+> ```javaScript
 > "👩\u{200D}👩\u{200D}👦\u{200D}👦" == "👩‍👩‍👦‍👦"
 > ```
 
 But **not all** Unicode glyph can be encoding with UTF-8 encoding system .
 > After tough work , I find a character that not implement with UTF-8 encoding system :
 > you can find some glyph in following link :
+> 
 > https://unicode.org/charts/PDF/Unicode-14.0/U140-2A700.pdf
+> 
 > Then you can paste this glyph to [unicode-table](https://unicode-table.com/en/) to find correspond UTF-8 representation .
 > You will not found it , but don't worry about , because most of character we used in normal life must be already include in   UTF-8 .
 
 Here have another point worth mention :  **UTF-8 encoding can not mapping to same Code Point position** , see following link :
+
 https://stackoverflow.com/a/5610039/11742589
 
 ### Addition : Other encoding-system base on Unicode

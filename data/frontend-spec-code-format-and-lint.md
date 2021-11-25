@@ -62,36 +62,41 @@ javascript是一种轻量级，函数优先的即时编译型语言，开始源�
 有的时候我们会忘记在提交前进行lint检查，那么提交上去的代码就可能存在潜在的问题。
 好在git为我们提供了[git hooks](https://git-scm.com/docs/githooks)可以在提交前执行任意命令，如果该命令执行成功才会进行git commit。
 我们可以通过配置pre-commit实现lint检查。
+```bash
+yarn add husky --dev
+```
 
-    yarn add husky --dev
 
 然后我们可以在package.json里面配置husky用来打开git hooks以及关闭git hooks的脚本
-```
+```json
 "scripts": { 
   "install-hasky": "husky install",  
   "uninstall-hasky": "yarn remove husky && git config --unset core.hooksPath"  
 },
 ```
+
 在安装husky后执行下列命令打开git hooks功能:
-```
+```bash
 yarn install-husky
 ```
+
 在打开git hooks之后我们可以再配置两个脚本用于执行ESLINT检测执行:
-```
+```json
 "scripts": { 
 	"lint": "eslint . --format html > .husky/eslint.html & open .husky/eslint.html",  
 	"open-lint-problems": "open .husky/eslint.html",
 },
 ```
-然后我们使用husky命令添加一个hooks shell
 
-    yarn husky add .husky/pre-commit
+然后我们使用husky命令添加一个hooks shell
+```bash
+yarn husky add .husky/pre-commit
+```
 
 执行后在.husky目录下会有一个叫pre-commit的shell脚本，我们编辑该shell脚本:
-```
+```bash
 #!/bin/sh  
 . "$(dirname "$0")/_/husky.sh"  
-  
   
 yarn lint  
 if [[ "$?" != 0 ]]; then  
