@@ -1,11 +1,10 @@
 import express from 'express';
-const Poet = require('poet')
+const Poet = require('poet-fork')
 const app =  express()
-const port = 2000
+const port = 80
 import watch from 'node-watch'
 //@ts-ignore
 import { marked } from 'marked';
-import hljs from "highlight.js";
 
 const pathConfig = {
   postDir:__dirname + '/../data',

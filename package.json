@@ -29,7 +29,7 @@
     "highlight.js": "11.3.1",
     "marked": "4.0.4",
     "node-watch": "0.7.1",
-    "poet": "DeepRolling/poet.git#poet-v3.0.0-gitpkg"
+    "poet-fork": "3.0.1"
   },
   "devDependencies": {
     "@tsconfig/node16": "1.0.1",

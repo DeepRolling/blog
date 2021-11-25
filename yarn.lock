@@ -20,23 +20,6 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@prisma/client@2.26.0":
-  version "2.26.0"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.26.0.tgz#a23a83bc5c931243ee20b78d9ded423e158aa4c1"
-  integrity sha512-iwhjdUV/MEQZ7RzTEcZ/D+ewxx/pGExWJ2LypfHioJIvEMyK0saPiR0tjMvMT2I2SVzrIM5dXGhBHWi2JksWrQ==
-  dependencies:
-    "@prisma/engines-version" "2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d"
-
-"@prisma/engines-version@2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d":
-  version "2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d"
-  resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d.tgz#aa707f4496ab92ef1eaf17758274f63b86d2ff9f"
-  integrity sha512-8tygPkPxag3myF5fgNQ60zwnNSZzFf4J+DXGKykXaBLLt9W2FLkaE5sVL8/OqAGhLAnVsKj83CqPms35bKrTKw==
-
-"@prisma/engines@2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d":
-  version "2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d"
-  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d.tgz#cfdacfad3acc0f3bf1d7710aa8f3852fd85ac6d9"
-  integrity sha512-a0jIhLvw9rFh6nZTr5Y3uzP28I2xNDu3pqxANvwMNnmIoYr1wYEcO1pMXn/36BGXldDdAWMmAbhfloHA3IB8DA==
-
 "@tsconfig/node10@^1.0.7":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@tsconfig/node10/-/node10-1.0.8.tgz#c1e4e80d6f964fbecb3359c43bd48b40f7cadad9"
@@ -523,7 +506,7 @@ marked@4.0.4:
   resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.4.tgz#d7cb16adaa474291307c521824c5716d32b95c36"
   integrity sha512-d8v7SensuOj+gxi0TGbqb2WtS60ycZfZuqtmAB9yz0JLotKerTob/47Qk9oLCDmn5G1dcdn3d5ydR+ih9dvS0A==
 
-marked@>=0.6.2:
+marked@>=4.0.4:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.5.tgz#85f46937f6a4616de7cbe0e1433e1640c320c729"
   integrity sha512-eUToMA5d5lunnipkCN7zFD0RiunCF2Uo6bImEt/Qx8LZMW7oPXTw7R+f+M5V3eS7164HjEDPfW8/TrefuFhDfw==
@@ -607,25 +590,19 @@ path-to-regexp@0.1.7:
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
   integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
 
-poet@DeepRolling/poet.git#poet-v3.0.0-gitpkg:
-  version "3.0.0"
-  resolved "https://codeload.github.com/DeepRolling/poet/tar.gz/680bed2cfe8d6d53ff0a9532ee043e01f9636934"
+poet-fork@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/poet-fork/-/poet-fork-3.0.1.tgz#830af395269d029deed4807e2e0123ea9948d027"
+  integrity sha512-FF2Mx0AYT3BKTvcIIM5HbXe05z7l/1n0l6LSOcXqG1Te19G0qKVnYSgNZC2Lu1KvZHfKTeWixf386bMEL6cxQw==
   dependencies:
     front-matter ">= 0.1.x"
     fs-then "0.1.x"
     json-front-matter ">= 0.1.4"
     jstransformer "^1.0.0"
-    marked ">=0.6.2"
+    marked ">=4.0.4"
     pug "^3.0.2"
     underscore "^1.13.1"
     when "2.1.x"
-
-prisma@2.26.0:
-  version "2.26.0"
-  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.26.0.tgz#48f7b8fa166900ae20f2383da711ac8712a56b86"
-  integrity sha512-MXTQlF8X9mabkdTRb9x5nF6jvo1kT85d9hqIpYjLLZy+5tlvEaCaLBj+ok8GINdfYBS7gwQERZ9MHx0tb5dCdg==
-  dependencies:
-    "@prisma/engines" "2.26.0-23.9b816b3aa13cc270074f172f30d6eda8a8ce867d"
 
 promise@^7.0.1:
   version "7.3.1"
