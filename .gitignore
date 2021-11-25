@@ -11,6 +11,12 @@ dist/
 npm-debug.log
 yarn-error.log
 
+
+# service file
+backend-running-processrecord.txt
+nohup.out
+
+
 # BUCK
 buck-out/
 \.buckd/
