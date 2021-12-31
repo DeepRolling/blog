@@ -1,5 +1,5 @@
 {{{
-    "title"    : "年",
+    "title"    : "The stupid year",
     "tags"     : ["life", "talk"],
     "category" : "literal",
     "date"     : "12-31-2021"
