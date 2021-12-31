@@ -7,7 +7,7 @@
 
 一个男人就着四箱啤酒的胡言乱语
 
-# Stage -> One : A man with four boxes of beer
+# Stage One : A man with four boxes of beer
 
 在成都市双流区中和镇某小区中，一个20出头的男孩子在电脑前敲下了这行文字。
 
