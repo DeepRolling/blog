@@ -1,4 +1,3 @@
-
 {{{
     "title"    : "关于我tmd戒烟这件事",
     "tags"     : ["life", "talk"],
