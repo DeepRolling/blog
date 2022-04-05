@@ -1,5 +1,5 @@
 {{{
-    "title"    : "局外人(The stranger -- Albert Camus)",
+    "title"    : "局外人(The stranger)",
     "tags"     : ["life", "talk"],
     "category" : "literal",
     "date"     : "04-05-2022"

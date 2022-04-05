@@ -1,5 +1,5 @@
 {{{
-    "title"    : "在没喝酒的时候说说吸烟",
+    "title"    : "在没喝酒的时候说说吸烟(About quit smoke without drunk)",
     "tags"     : ["life", "talk"],
     "category" : "literal",
     "date"     : "03-27-2022"
