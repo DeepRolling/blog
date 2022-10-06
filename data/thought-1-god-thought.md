@@ -1,5 +1,6 @@
 {{{
-    "title"    : "随想--神思",
+    "title"    : "随笔:神思",
+    "slug"    : "godThought",
     "tags"     : ["life", "talk"],
     "category" : "literal",
     "date"     : "09-30-2022"
